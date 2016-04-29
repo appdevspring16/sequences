@@ -1,0 +1,67 @@
+<h1>A Quick Puzzle to Test Your Problem Solving</h1>
+
+<p>
+A short game sheds light on government policy, corporate America and why no one likes to be wrong.
+</p>
+
+<p>
+Here’s how it works:
+</p>
+
+<p>
+We’ve chosen a rule that some sequences of three numbers obey — and some do not. Your job is to guess what the rule is.
+</p>
+
+<p>
+We’ll start by telling you that the sequence 2, 4, 8 obeys the rule:
+</p>
+
+<ul>
+  <li>2, 4, 8 Obeys the rule</li>
+</ul>
+
+<p>
+Now it’s your turn. Enter a number sequence in the boxes below, and we’ll tell you whether it satisfies the rule or not. You can test as many sequences as you want.
+</p>
+
+<ul>
+  <li>1, 2, 3 Yes!</li>
+  <li>0, 1, 9 Yes!</li>
+</ul>
+
+<p>
+  Enter a sequence:
+</p>
+
+<form>
+  <label for="first">First number:</label>
+  <input id="first" type="text" placeholder="The first number">
+
+  <label for="second">Second number:</label>
+  <input id="second" type="text" placeholder="The second number">
+
+  <label for="third">Third number:</label>
+  <input id="third" type="text" placeholder="The third number">
+
+<button>Check</button>
+
+</form>
+
+<hr>
+<p>
+  When you think you know the rule, describe it in words below and then submit your answer. <strong>Make sure you’re right; you won’t get a second chance.</strong>
+</p>
+
+<form action="http://localhost:3000/show_answer">
+  <label for="your_answer">Your answer:</label>
+<div>
+  <textarea name="rule" id="your_answer" rows="10" cols="30"></textarea>
+</div>
+  <button>I think I know it</button>
+</form>
+
+<hr>
+
+<a href="Reset"></a>
+
+<!-- the label for and id name there ties together where to put the focus (ie where the cursor should go when you cover over the label - good for people w/ screen readers, seo, etc.)... so always tie the label and the input together
