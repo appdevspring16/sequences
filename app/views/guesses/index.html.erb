@@ -15,25 +15,26 @@
 
 <ul>
   <li>3, 34, 23432 Yes!</li>
+  <li><%= @user_first %>, <%= @user_second %>, <%= @user_third %></li>
 </ul>
 
 <p>Enter a sequence:</p>
 
-<form action="">
+<form action="/all_guesses">
   <label for="first">First number:</label>
-  <input id="first" type="text" placeholder="The first number">
+  <input name="first_word" id="first" type="text" placeholder="The first number">
   <label for="second">Second number:</label>
-  <input id="second" type="text" placeholder="The second number">
+  <input name ="second_word" id="second" type="text" placeholder="The second number">
   <label for="third">Third number:</label>
-  <input id="third" type="text" placeholder="The third number">
+  <input name ="third_word" id="third" type="text" placeholder="The third number">
   <button>Check</button>
 </form>
 <hr>
 <p>When you think you know the rule, describe it in words below and then submit your answer. <b>Make sure you’re right; you won’t get a second chance.</b></p>
-<form action="">
-  <label for="rule">Your answer:</label><br>
-  <textarea id="rule" cols="30" rows="10"></textarea><br>
+<form action="http://localhost:3000/show_answer">
+  <label for="your_answer">Your answer:</label><br>
+  <textarea name="rule" id="your_answer" cols="30" rows="10"></textarea><br>
   <button>I think I know it</button>
 </form>
 <hr>
-<a href="#">Reset</a>
+<a href="http://localhost:3000/all_guesses">Reset</a>
