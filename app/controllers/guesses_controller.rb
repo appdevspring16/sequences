@@ -15,4 +15,9 @@ class GuessesController < ApplicationController
 
     redirect_to("/all_guesses")
   end
+
+  def clear
+    Guess.destroy_all
+    redirect_to("/all_guesses")
+  end
 end
