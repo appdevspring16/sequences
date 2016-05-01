@@ -1,0 +1,76 @@
+
+
+<h1>A Quick Puzzle to Test Your Problem Solving</h1>
+
+<p>
+  A short game sheds light on government policy, corporate America and why no one likes to be wrong.
+</p>
+
+<p>
+  Here’s how it works:
+</p>
+
+<p>
+  We’ve chosen a rule that some sequences of three numbers obey — and some do not. Your job is to guess what the rule is.
+</p>
+
+<p>
+  We’ll start by telling you that the sequence 2, 4, 8 obeys the rule:
+</p>
+
+<ul>
+  <li>2, 4, 8 Obeys the rule</li>
+</ul>
+
+<p>
+  Now it’s your turn. Enter a number sequence in the boxes below, and we’ll tell you whether it satisfies the rule or not. You can test as many sequences as you want.
+</p>
+
+<ul>
+  <li>15, 16, 17 Yes!</li>
+  <li>1, 5, 8 Yes!</li>
+  <li> 15, 16, 17 Yes!</li>
+  <li>5, 3, 2 No.</li>
+  <li>0, 0, 0 No.</li>
+  <li>1, 2, 3 Yes!</li>
+
+  <% @guesses.each do |guess| %>
+  <li> <%= guess.first %>, <%= guess.second %>, <%= guess.third %>
+    <% if guess.first < guess.second && guess.second < guess.third %>
+    Yes!
+    <% else %>
+    No
+    <% end %>
+  </li>
+  <% end %>
+
+</ul>
+
+<form action="/create_guess">
+  <p>
+    Enter a sequence:
+  </p>
+  <label for="first">First number:</label>
+  <input type="text" name="first_number" value="" placeholder="The first number">
+  <label for="second">Second number:</label>
+  <input type="text" name="second_number" value="" placeholder="The second number">
+  <label for="third">Third number:</label>
+  <input type="text" name="third_number" value="" placeholder="The third number">
+  <button>Check</button>
+</form>
+
+<hr>
+<p>
+  When you think you know the rule, describe it in words below and then submit your answer. <b>Make sure you’re right; you won’t get a second chance.</b>
+</p>
+<form action="/answer">
+  <label for="textbox">Your answer:</label>
+  <div>
+    <textarea name="name" rows="8" cols="40" placeholder="Describe what you think the rule is"></textarea>
+  </div>
+
+  <input type="submit" value="I think I know it">
+
+</form>
+<hr>
+<a href="/clear_guesses">Reset</a>
