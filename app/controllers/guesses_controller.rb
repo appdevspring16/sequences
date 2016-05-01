@@ -20,4 +20,8 @@ class GuessesController < ApplicationController
     Guess.destroy_all
     redirect_to("/all_guesses")
   end
+
+  def answer
+    render("answer.html.erb")
+  end
 end
