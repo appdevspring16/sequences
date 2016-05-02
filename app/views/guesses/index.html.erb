@@ -1,0 +1,63 @@
+<h1>A Quick Puzzle to Test Your Problem Solving</h1>
+<p>
+  A short game sheds light on government policy, corporate America and why no one likes to be wrong.
+</p>
+<p>
+  Here's how it works:
+</p>
+<p>
+  We've chosen a rule that some sequences of three numbers obey --- and some do not.  Your job is to guess what the rule is.
+</p>
+<p>
+  We'll start by tell you that the sequence 2, 3, 8 obeys the rule:
+</p>
+<ul>
+  <li>2, 4, 8 Obeys the rule</li>
+</ul>
+
+<p>
+  Now it's your turn. Enter a number sequence in the boxes below, and we'll tell you whether it satifies the rule or not. You can test as many sequences as you want.
+</p>
+
+<ul>
+  <% @guesses.each do |guess| %>
+  <li>
+    <% if guess.first && guess.second && guess.third %>
+    <%= guess.first %>,<%= guess.second %>, <%= guess.third %>
+    <% if guess.first < guess.second && guess.second < guess.third %>
+    Yes
+    <% else %>
+    No
+    <% end %>
+  </li>
+  <% end %>
+  <% end %>
+</ul>
+
+<form action="/create_guess">
+  <label>Enter a Sequence:</label>
+  <p> First number: <input type="text" name="first_number" placeholder="The first number">
+    Second Number <input type="text" name="second_number" placeholder="The second number">
+    Third Number    <input type="text" name="third_number" placeholder="The third number">
+    <button>Check</button></p>
+  </form>
+
+  <p>
+    Still need the divider here
+  </p>
+
+  <p>
+    When you think you know the rule, describe it in words below and then submit your answer. Make you're right; you won't get a second chance.
+  </p>
+  <p>
+
+  </p>
+
+
+  <form action="/check_rule">
+    <label>Your answer:</label>
+    <p><input type="text" name="rule_guess" value="Describe what you think the rule is"></p>
+    <p><button>I think I know it</button></p>
+  </form>
+
+  <a href="/start_over">Reset</a>
