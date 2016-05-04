@@ -1,0 +1,48 @@
+<h1>All your Guesses</h1>
+
+<p>
+  2,4,8 Obey the rule!
+</p>
+
+<ul>
+  <% @guesses.each do |guess| %>
+  <li>
+    <%= guess.first %>, <%= guess.second %>, <%= guess.third %>
+    <% if guess.first < guess.second && guess.second < guess.third %>
+    Yes!
+    <% else %>
+    No
+    <% end %>
+  </li>
+    <% end %>
+
+</ul>
+<p>
+  Enter a sequence
+</p>
+<form action="/create_guess">
+  <label for="first">First Number</label>
+  <input id="first" type="text" placeholder="The first number" name="first_number">
+  <label for="second">Second Number</label>
+  <input id="second" type="text" placeholder="The second number" name="second_number">
+  <label for="third">Third Number</label>
+  <input id="third" type="text" placeholder="The third number" name="third">
+  <button>
+    Check
+  </button>
+</form>
+<hr>
+<p>
+  When you think you know the rule, describe it in words below and then submit your answer. <strong>Make sure you’re right; you won’t get a second chance.</strong>
+</p>
+
+<form class="" action="index.html" method="post">
+  <label for="txt">Your answer:</label>
+  <div>
+    <textarea id="txt" rows="10" cols="30"></textarea>
+  </div>
+  </form>
+
+<button type="button" name="button">I think i know it</button>
+
+<a href="#">Reset</a>
